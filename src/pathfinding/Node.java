@@ -1,3 +1,6 @@
+package pathfinding;
+
+import pathfinding.WeightedGraph.Mode;
 
 public interface Node {
 	
@@ -6,6 +9,7 @@ public interface Node {
 	public void addNeighbour(Node node, double distance);
 	
 	public boolean setDistanceAndPrevNode(double shotestDistanceCandidate, Node prevNodeCandidate);
+	
 	public double getDistanceFromStartingNode();
 	public Node getPreviousNode();
 	public int getIndex();

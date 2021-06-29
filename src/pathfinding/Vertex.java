@@ -1,6 +1,10 @@
+package pathfinding;
+
 import java.util.HashMap;
+import pathfinding.WeightedGraph.Mode;
 
 public class Vertex implements Node {
+	
 	private int index;
 	private String name;
 	private HashMap<Vertex, Double> neighbours = new HashMap<Vertex, Double>();
@@ -31,7 +35,7 @@ public class Vertex implements Node {
 		return index==v.getIndex();
 	}
 	
-	public HashMap<Vertex, Double> getNeighbours(){}
+	public HashMap<Vertex, Double> getNeighbours() {}
 	
 	public Node getPreviousNode() {}
 	
