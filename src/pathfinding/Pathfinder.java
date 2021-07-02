@@ -18,6 +18,8 @@ public class Pathfinder {
 		
 	}
 	
-	private static double[][] getAdjacencyMatrix() {}
+	private static double[][] getAdjacencyMatrix() {
+		
+	}
 
 }

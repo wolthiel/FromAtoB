@@ -23,14 +23,17 @@ public class WeightedGraph implements Graph {
 		graph = createGraphFromAdjacencyMatrix(adjacencyMatrix, names);
 	}
 	
-	@Override
 	public String dijkstraForRandomPoints(Mode mode) {
 		int start = rand.nextInt(graph.size());
 		int end = rand.nextInt(graph.size());
-		return dijkstra(start, end, mode);
+		String string = dijkstra(start, end, mode);
+		return string;
 	}
 	
-	public String dijkstra(int strt, int end, Mode mode) {}
+	public String dijkstra(int strt, int end, Mode mode) {
+		String string = "" + strt + end + mode;
+		return string;
+	}
 	
 	private Vertex nextNodeToExplore() {}
 	
