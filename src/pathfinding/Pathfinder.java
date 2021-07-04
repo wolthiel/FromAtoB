@@ -1,23 +1,26 @@
 package pathfinding;
 
-import pathfinding.WeightedGraph.Mode;
-
 public class Pathfinder {
 	
 	public static void main(String[] args) {
 		
-		double[][] adjMat = getAdjacencyMatrix();
+		/** 
+		 * max for the first parameter(nodes) = 36; 
+		 * max for the second parameter(edges) = nodes^2 - nodes;
+		 * this is necessary in order non to get a point connected to itself
+		 * thus, point A doesn't have an edge to point A, point B is not connected to point B and so on.
+		 */
 		
-		WeightedGraph graph = new WeightedGraph(adjMat);
-		System.out.println(graph);
-		System.out.println(graph.dijkstra(0, 4, Mode.CHEAPEST));
-		System.out.println(graph.dijkstra(0, 4, Mode.SHORTEST));
+		WeightedGraph graph = new WeightedGraph(8, 45);  
+		System.out.println("The random Matrix:\n");
+		graph.printMatrix();
+		graph.dijkstraForRandomPoints();
+//		graph.resetGraph();
 		
-		WeightedGraph graph2 = new WeightedGraph(30, 65);
-		System.out.println(graph2.dijkstraForRandomPoints(Mode.CHEAPEST));
-		
+//		WeightedGraph graph2 = new WeightedGraph(3, 6);
+//		System.out.println("The random Matrix2:\n");
+//		graph2.printMatrix();
+//		System.out.println(graph.dijkstraForRandomPoints(Mode.SHORTEST));
+//		graph2.resetMatrix();
 	}
-	
-	private static double[][] getAdjacencyMatrix() {}
-
 }

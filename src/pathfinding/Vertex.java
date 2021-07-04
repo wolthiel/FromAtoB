@@ -1,13 +1,9 @@
 package pathfinding;
 
-import java.util.HashMap;
-import pathfinding.WeightedGraph.Mode;
-
-public class Vertex implements Node {
+public class Vertex {
 	
 	private int index;
 	private String name;
-	private HashMap<Vertex, Double> neighbours = new HashMap<Vertex, Double>();
 	
 	private boolean explored;
 	private double distanceFromStartingNode;
@@ -21,13 +17,24 @@ public class Vertex implements Node {
 		this.previousNode = null;
 	}
 	
-	public void reset() {}
+	public void reset() {
+		this.explored = false;
+		this.distanceFromStartingNode = Double.POSITIVE_INFINITY;
+		this.previousNode = null;
+	}
 	
-	public void explore (Mode mode) {}
+	public void setExplored() {
+		explored = true;
+	}
 	
-	public void addNeighbour(Node node, double distance) {}
+	public void setPreviousNode(Vertex prev) {
+		 //System.out.println("Prevnode " + this.getName() + ": " + prev.getName());
+		 this.previousNode = prev;
+	}
 	
-	public boolean setDistanceAndPrevNode(double shortestDistanceCandidate, Node prevNodeCandidate) {}
+	public Vertex getPreviousNode() {
+		return this.previousNode;
+	}
 	
 	@Override
 	public boolean equals(Object o) {
@@ -35,16 +42,24 @@ public class Vertex implements Node {
 		return index==v.getIndex();
 	}
 	
-	public HashMap<Vertex, Double> getNeighbours() {}
+	public double getDistanceFromStartingNode() { 
+		return this.distanceFromStartingNode; 
+		}
 	
-	public Node getPreviousNode() {}
-	
-	public int getIndex() {}
-	
-	public boolean getExplored() {}
-	
-	public String getName() {}
-	
-	public double getDistanceFromStartingNode() {}
+	public double setDistance(double distance) {
+		return this.distanceFromStartingNode = distance;
+	}
+
+	public int getIndex() {
+		return this.index;
+	}
+
+	public boolean getExplored() {
+		return this.explored;
+	}
+
+	public String getName() {
+		return this.name;
+	}
 
 }
