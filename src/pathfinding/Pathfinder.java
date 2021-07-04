@@ -11,7 +11,7 @@ public class Pathfinder {
 		 * thus, point A doesn't have an edge to point A, point B is not connected to point B and so on.
 		 */
 		
-		WeightedGraph graph = new WeightedGraph(8, 45);  
+		WeightedGraph graph = new WeightedGraph(20, 40);  
 		System.out.println("The random Matrix:\n");
 		graph.printMatrix();
 		graph.dijkstraForRandomPoints();
